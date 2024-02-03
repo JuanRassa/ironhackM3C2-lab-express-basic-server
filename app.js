@@ -3,6 +3,8 @@
 const express = require('express');
 const logger = require('morgan');
 
+const projectsData = require('./data/projects.json');
+
 const port = 5005;
 
 // CREATE EXPRESS APP
@@ -25,6 +27,10 @@ app.get('/', (_, res) => {
 });
 app.get('/blog', (_, res) => {
   res.sendFile(`${__dirname}/views/blog.html`);
+});
+app.get('/api/projects', (_, res) => {
+  res.json(projectsData);
+  res.status(200);
 });
 
 // START THE SERVER
