@@ -44,5 +44,5 @@ app.get('*', (_, res) => {
 // Make your Express server listen on port 5005:
 
 app.listen(port, () => {
-  console.log(`Server alive in port ${port}`);
+  console.log(`Server alive in port ${port}!`);
 });
