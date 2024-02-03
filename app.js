@@ -4,6 +4,7 @@ const express = require('express');
 const logger = require('morgan');
 
 const projectsData = require('./data/projects.json');
+const articles = require('./data/articles.json');
 
 const port = 5005;
 
@@ -30,7 +31,9 @@ app.get('/blog', (_, res) => {
 });
 app.get('/api/projects', (_, res) => {
   res.json(projectsData);
-  res.status(200);
+});
+app.get('/api/articles', (_, res) => {
+  res.json(articles);
 });
 
 // START THE SERVER
